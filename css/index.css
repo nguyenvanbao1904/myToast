@@ -1,0 +1,136 @@
+:root{
+    --success_color: #6cc933;
+    --error_color: #ee4f40;
+    --timeSlideIn: 0.7s
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    background-color: red;
+    min-width: 250px;
+    margin: 0 20px;
+    padding: 15px 0;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.btn__success{
+    background-color: var(--success_color);
+}
+
+.btn__error{
+    background-color: var(--error_color);
+}
+
+.toast{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.toast_container + .toast_container{
+    margin-top: 40px;
+}
+
+.toast_container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px #999;
+    border-radius: 5px;
+    font-size: 25px;
+    min-width: 450px;
+    height: 100px;
+}
+
+@keyframes slideIn {
+    from{
+        transform: translateX(calc(100% + 50px));
+        opacity: 0;
+    }
+    to{
+        right: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.toast_status{
+    width: 7px;
+    height: 100%;
+
+}
+
+.toast_body{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.toast_content{
+    color: #666;
+}
+
+.toast_title{
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.toastDesc{
+    font-size: 16px;
+}
+
+.toast_close{
+    cursor: pointer;
+}
+
+.toast_success .toast_status{
+    background-color: var(--success_color);
+}
+
+.toast_success .toast_icon{
+    color: var(--success_color);
+}
+
+.toast_error .toast_status{
+    background-color: var(--error_color);
+}
+
+.toast_error .toast_icon{
+    color: var(--error_color);
+}
